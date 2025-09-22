@@ -97,7 +97,7 @@ img {
 }
 
 .container {
-  max-width: 650px;         
+  max-width: 700px;         
   margin: 0 auto;    
   padding: 0; 
   width: 100%;
@@ -178,14 +178,14 @@ header {
 .divider {
   display: inline-block;
   width: 0.5px;
-  height: 54px;      /* match icon height */
+  height: 60px;      /* match icon height */
   background: rgb(80, 79, 79);  /* or any color you want */
 }
 
 #park-image {
   position: absolute;
   z-index: -5;
-  width: 650px;
+  width: 700px;
   height: 45%;
 }
 
@@ -195,8 +195,8 @@ header {
   gap: 20px;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 30%;
   padding-left: 2%;
+  margin-top: 40%;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -209,7 +209,7 @@ header {
 
 #park-urls {
   background-color: var(--bs-black);
-  height: 54px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

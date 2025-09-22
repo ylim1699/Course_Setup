@@ -127,6 +127,8 @@ body {
 header {
   flex-direction: column;
   margin-top: 2%;
+  display: flex;
+  flex-direction: column;
 }
 
 .global-header {
@@ -182,7 +184,7 @@ header {
 
 #park-image {
   position: absolute;
-  z-index: -1;
+  z-index: -5;
   width: 650px;
   height: 45%;
 }
@@ -193,6 +195,10 @@ header {
   gap: 20px;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 30%;
+  padding-left: 2%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #park-header div p {
@@ -208,10 +214,9 @@ header {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  margin-top: 30%;
 }
 
-.park-urls a {
+#park-urls a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -229,8 +234,8 @@ main {
   height: 20px;
 }
 
-a:hover {
-  color: var(--bs-link-hover-color);
+#park-urls a:hover {
+  transform: scale(1.1);
 }
 
 /* Skip links styling */

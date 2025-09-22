@@ -91,19 +91,142 @@
 * {
   box-sizing: border-box;
 }
+
 img {
   max-width: 100%;
+}
+
+.container {
+  max-width: 650px;         
+  margin: 0 auto;    
+  padding: 0; 
+  width: 100%;
 }
 
 body {
   font-family: var(--bs-body-font-family);
   font-size: 18px;
   margin: 0;
+  display: flex;
+  margin-top: 2%;
 }
 
-a:link,
-a:visited {
+.disclaimer {
+  text-align: start;
+  display: flex;
+  align-items: center;
+  white-space: normal;
+  display: inline;
+}
+
+.disclaimer a {
+  text-decoration: none;
   color: var(--bs-link-color);
+}
+
+header {
+  flex-direction: column;
+  margin-top: 2%;
+}
+
+.global-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bs-black);
+  padding-left: 1%;
+  padding-right: 1%;
+  height: 54px;
+}
+
+.global-header_left a {
+  text-decoration: none;
+}
+
+.global-header_left a span {
+  color: var(--bs-body-bg);
+}
+
+.global-header_right a {
+  text-decoration: none;
+}
+
+.global-header_right button {
+  background-color: black;
+  border-style: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.global-header_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+#global-nav-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.divider {
+  display: inline-block;
+  width: 0.5px;
+  height: 54px;      /* match icon height */
+  background: rgb(80, 79, 79);  /* or any color you want */
+}
+
+#park-image {
+  position: absolute;
+  z-index: -1;
+  width: 650px;
+  height: 45%;
+}
+
+#park-header {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#park-header div p {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+#park-urls {
+  background-color: var(--bs-black);
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30%;
+}
+
+.park-urls a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  margin-top: 50%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
 
 a:hover {

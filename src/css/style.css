@@ -97,7 +97,7 @@ img {
 }
 
 .container {
-  max-width: 700px;         
+  max-width: 900px;         
   margin: 0 auto;    
   padding: 0; 
   width: 100%;
@@ -120,7 +120,6 @@ body {
 }
 
 .disclaimer a {
-  text-decoration: none;
   color: var(--bs-link-color);
 }
 
@@ -178,15 +177,15 @@ header {
 .divider {
   display: inline-block;
   width: 0.5px;
-  height: 60px;      /* match icon height */
+  height: 54px;      /* match icon height */
   background: rgb(80, 79, 79);  /* or any color you want */
 }
 
-#park-image {
+#park-image img {
   position: absolute;
   z-index: -5;
-  width: 700px;
-  height: 45%;
+  width: 900px;
+  height: 400px;
 }
 
 #park-header {
@@ -196,7 +195,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   padding-left: 2%;
-  margin-top: 40%;
+  margin-top: 30%;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }

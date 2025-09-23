@@ -1,0 +1,14 @@
+const recipes = [
+    {
+    recipe_name: "Chocolate Chip Cookie",
+    Instruction: ["1.Cream the butter and sugar together",
+                    "2. then beat in the eggs and vanilla",
+                    "3.Mix in salt, soda and flour",
+                    "4.Add chocolate chips and coconut",
+                    "5.Bake 8-10 minutes at 350 F"],
+    Ingredients: [{"item": "butter", "quantity": "1", "unit": "lb"},
+                    {"item": "Brown Sugar"}
+                    ]
+    }
+
+]

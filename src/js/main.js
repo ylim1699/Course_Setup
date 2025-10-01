@@ -11,7 +11,7 @@ const parkImgAlt = parkData.images[0].altText;
 const parkDesignation = parkData.designation;
 const parkStates = parkData.states;
 
-
+// DOM inputs
 const disclaimer = document.querySelector(".disclaimer > a");
 disclaimer.href = parkLink;
 disclaimer.textContent = parkFullName;

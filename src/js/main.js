@@ -2,31 +2,80 @@ import { getParkData } from "./parkService.mjs";
 
 const parkData = getParkData();
 
-// parkData selections
-const parkFullName = parkData.fullName;
-const parkLink = parkData.url;
-const parkName = parkData.name;
-const parkImg1 = parkData.images[0].url;
-const parkImgAlt = parkData.images[0].altText;
-const parkDesignation = parkData.designation;
-const parkStates = parkData.states;
+const parkInfoLinks = [
+        {
+            name: "Current Conditions",
+            link: "conditions.html",
+            image: parkData.images[2].url,
+            description:
+            "See what conditions to expect in the park before leaving your trip",
+        },
+        {
+            name: "Fees and Passes",
+            link: "fees.html",
+            image: parkData.images[3].url,
+            description: "Learn about the fees and passes that are available",
+        },
+        {
+            name: "Vistor Centers",
+            link: "visitor_centers.html",
+            image: parkData.images[9].url,
+            description: "Learn about the visitor concerns in the park",
+        },
+    ];
 
-// DOM inputs
-const disclaimer = document.querySelector(".disclaimer > a");
-disclaimer.href = parkLink;
-disclaimer.textContent = parkFullName;
+function setHeaderInfo(data) {
+    
+    const disclaimer = document.querySelector(".disclaimer > a");
+    disclaimer.href = data.url;
+    disclaimer.textContent = data.fullName;
+    
+    const title = document.querySelector(".park-header_title");
+    title.textContent = data.name;
+    
+    const image = document.querySelector("#park-image > img");
+    image.src = data.images[0].url;
+    image.alt = data.images[0].altText;
+    
+    const designation = document.querySelector(".park-header_subtitle > p");
+    designation.textContent = data.designation;
+    
+    const states = document.querySelector(".park-header_subtitle p:nth-of-type(2)");
+    states.textContent = data.states;  
+}
 
-const title = document.querySelector(".park-header_title");
-title.textContent = parkName;
+function mediaCardTemplate(info) {
+    return `<div class="media-card">
+    <a href="${info.link}">
+    <img src="${info.image}" alt="${info.name}" class="media-card_image">
+    </a>
+    <h3 class="media-card_table">${info.name}</h3>
+    <p>${info.description}</p>
+    </div>`;
+}
 
-const image = document.querySelector("#park-image > img");
-image.src = parkImg1;
-image.alt = parkImgAlt;
+function parkFooterTemplate(info) {
+    return `<div class = park-footer>
+    
+    </div>`;
+}
 
-const designation = document.querySelector(".park-header_subtitle > p")
-designation.textContent = parkDesignation;
+function setParkIntro(info) {
 
-const states = document.querySelector(".park-header_subtitle p:nth-of-type(2)");
-states.textContent = parkStates;
+}
 
-// Try making this into a template function
+function setParkInfo(data) {
+    const parkInfoSection = document.querySelector(".info")
+    const html = data.map(mediaCardTemplate);
+    parkInfoSection.innerHTML = html.join("");
+}
+
+function setParkFooter(info) {
+
+}
+
+setHeaderInfo(parkData);
+setParkInfo(parkInfoLinks);
+setParkIntro();
+setParkFooter();
+

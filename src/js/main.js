@@ -3,29 +3,29 @@ import { getParkData } from "./parkService.mjs";
 const parkData = getParkData();
 
 const parkInfoLinks = [
-        {
-            name: "Current Conditions",
-            link: "conditions.html",
-            image: parkData.images[2].url,
-            description:
-            "See what conditions to expect in the park before leaving your trip",
-        },
-        {
-            name: "Fees and Passes",
-            link: "fees.html",
-            image: parkData.images[3].url,
-            description: "Learn about the fees and passes that are available",
-        },
-        {
-            name: "Vistor Centers",
-            link: "visitor_centers.html",
-            image: parkData.images[9].url,
-            description: "Learn about the visitor concerns in the park",
-        },
-    ];
-
-function setHeaderInfo(data) {
+    {
+        name: "Current Conditions",
+        link: "conditions.html",
+        image: parkData.images[2].url,
+        description:
+        "See what conditions to expect in the park before leaving your trip",
+    },
+    {
+        name: "Fees and Passes",
+        link: "fees.html",
+        image: parkData.images[3].url,
+        description: "Learn about the fees and passes that are available",
+    },
+    {
+        name: "Vistor Centers",
+        link: "visitor_centers.html",
+        image: parkData.images[9].url,
+        description: "Learn about the visitor concerns in the park",
+    },
+];
     
+function setHeaderInfo(data) {
+        
     const disclaimer = document.querySelector(".disclaimer > a");
     disclaimer.href = data.url;
     disclaimer.textContent = data.fullName;
@@ -44,23 +44,29 @@ function setHeaderInfo(data) {
     states.textContent = data.states;  
 }
 
+// This section is for the top part of the park's main page
+function parkIntroTemplate(info) {
+    return `<div class="park-intro">
+    <h1>${info.fullName}</h1>
+    <p>${info.description}</p>
+    </div>`;
+}
+
+function setParkIntro(data) {
+    const parkIntroSection = document.querySelector(".intro");
+    const html = parkIntroTemplate(data);
+    parkIntroSection.innerHTML = html;  
+}
+
+// This section is for the bottom portion for the park's main page
 function mediaCardTemplate(info) {
     return `<div class="media-card">
     <a href="${info.link}">
     <img src="${info.image}" alt="${info.name}" class="media-card_image">
     </a>
-    <h3 class="media-card_table">${info.name}</h3>
+    <h3 class="media-card_table">${info.name} > </h3>
     <p>${info.description}</p>
     </div>`;
-}
-
-function parkFooterTemplate(info) {
-    return `<div class = park-footer>
-    
-    </div>`;
-}
-
-function setParkIntro(info) {
 
 }
 
@@ -70,12 +76,30 @@ function setParkInfo(data) {
     parkInfoSection.innerHTML = html.join("");
 }
 
-function setParkFooter(info) {
+// This section is for the footer of the park page
+function parkFooterTemplate(info) {
+    return `<div class="park-footer">
+    <h3>Contact Info</h3>
+    <div class="mailing">
+    <p>Mailing Address:</p>
+    </div>
+    <p>${info.addresses[1].line1}</p>
+    <p>${info.addresses[1].city},${info.addresses[1].stateCode} ${info.addresses[1].postalCode}</p>
+    <div class="phone">
+    <p>Phone:</p>
+    </div>
+    <p>${info.contacts.phoneNumbers[0].phoneNumber}</p>
+    </div>`;
+}
 
+function setParkFooter(data) {
+    const parkFooterSection = document.querySelector("footer");
+    const html = parkFooterTemplate(data);
+    parkFooterSection.innerHTML = html;
 }
 
 setHeaderInfo(parkData);
 setParkInfo(parkInfoLinks);
-setParkIntro();
-setParkFooter();
+setParkIntro(parkData);
+setParkFooter(parkData);
 

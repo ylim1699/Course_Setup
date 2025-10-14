@@ -1,28 +1,12 @@
 import { getParkData } from "./parkService.mjs";
 
-const parkData = getParkData();
+const { park, parkInfoLinks } = getParkData();
 
-const parkInfoLinks = [
-    {
-        name: "Current Conditions",
-        link: "conditions.html",
-        image: parkData.images[2].url,
-        description:
-        "See what conditions to expect in the park before leaving your trip",
-    },
-    {
-        name: "Fees and Passes",
-        link: "fees.html",
-        image: parkData.images[3].url,
-        description: "Learn about the fees and passes that are available",
-    },
-    {
-        name: "Vistor Centers",
-        link: "visitor_centers.html",
-        image: parkData.images[9].url,
-        description: "Learn about the visitor concerns in the park",
-    },
-];
+setHeaderInfo(park);
+setParkInfo(parkInfoLinks);
+setParkIntro(park);
+setParkFooter(park);
+
     
 function setHeaderInfo(data) {
         
@@ -98,8 +82,5 @@ function setParkFooter(data) {
     parkFooterSection.innerHTML = html;
 }
 
-setHeaderInfo(parkData);
-setParkInfo(parkInfoLinks);
-setParkIntro(parkData);
-setParkFooter(parkData);
+
 

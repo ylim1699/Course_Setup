@@ -414,6 +414,19 @@ main {
   margin-bottom: 3%;
 }
 
+.intro {
+  margin: 10% 8% 10% 8%;
+}
+
+.intro h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+}
+
+.intro p {
+  font-size: 0.9rem;
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -426,6 +439,33 @@ main {
 .info .media-card img{
   width: 100%;
   height:auto;
+}
+
+.info h3 {
+  font-size: 1rem;
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+}
+
+.info p {
+  font-size: 0.85rem;
+}
+
+.park-footer {
+  padding: 7%
+}
+
+.park-footer h3 {
+  font-size: 1rem;
+  Margin-bottom: 3%;
+}
+
+.park-footer p {
+  font-size: 0.75rem;
+}
+
+.park-footer .phone {
+  margin-top: 3%;
 }
 
 }

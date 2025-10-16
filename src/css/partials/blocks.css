@@ -1,0 +1,29 @@
+.intro {
+  margin: 5% 0 5% 2%;
+}
+
+.park-intro h1 {
+  margin-bottom: 3%;
+}
+
+.info {
+  display: flex;
+  gap: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.info h3 {
+  font-size: 1rem;
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+}
+
+.info p {
+  font-size: 0.85rem;
+}
+
+.info .media-card{
+  width:300px;
+  height:150px;
+}

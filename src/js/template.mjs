@@ -29,3 +29,9 @@ export function parkFooterTemplate(info) {
     <p>${info.contacts.phoneNumbers[0].phoneNumber}</p>
     </div>`;
 }
+
+export function alertsTemplate(info) {
+    return `<div class="alert-card">
+        
+    </div>`;
+}

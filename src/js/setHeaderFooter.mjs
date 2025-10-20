@@ -1,6 +1,6 @@
 import { parkFooterTemplate } from "./template.mjs"
 
-function setHeaderInfo(data) {
+function setHeaderInfo(data, number) {
     
     const disclaimer = document.querySelector(".disclaimer > a");
     disclaimer.href = data.url;
@@ -10,8 +10,8 @@ function setHeaderInfo(data) {
     title.textContent = data.name;
     
     const image = document.querySelector("#park-image > img");
-    image.src = data.images[0].url;
-    image.alt = data.images[0].altText;
+    image.src = data.images[number].url;
+    image.alt = data.images[number].altText;
     
     const designation = document.querySelector(".park-header_subtitle > p");
     designation.textContent = data.designation;
@@ -26,7 +26,7 @@ function setParkFooter(data) {
     parkFooterSection.innerHTML = html;
 }
 
-export default function setHeaderFooter(park) {
-    setHeaderInfo(park);
+export default function setHeaderFooter(park, number) {
+    setHeaderInfo(park, number);
     setParkFooter(park);
 }

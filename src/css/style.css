@@ -2,6 +2,7 @@
 @import "./partials/global.css";
 @import "./partials/footer.css";
 @import "./partials/blocks.css";
+@import "./conditions.css";
 
 :root {
   --bs-black: #000;

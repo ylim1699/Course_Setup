@@ -1,5 +1,6 @@
 import { getParkData, getParkAlertData } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";   
+import { alertsTemplate } from "./template.mjs";
 
 async function init() {
     const park = await getParkData();
@@ -8,9 +9,9 @@ async function init() {
     setAlertInfo(alerts);
 }
 
-function setAlertInfo(data) {
+async function setAlertInfo(info) {
     const alertSection = document.querySelector(".alerts");
-    const html = getParkAlertData(data);
+    const html = alertsTemplate(info);
     alertSection.innerHTML = html;
 }
 

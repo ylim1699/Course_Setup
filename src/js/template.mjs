@@ -31,7 +31,12 @@ export function parkFooterTemplate(info) {
 }
 
 export function alertsTemplate(info) {
-    return `<div class="alert-card">
-        
-    </div>`;
+    return `<h3>Alerts</h3>
+    <details name="requirements">
+        <summary>Alerts</summary>
+        <section class="alert1">
+            <h4>${info[2].title}</h4>
+            <p>${info[2].description}</p>
+        </section>
+    </details>`;
 }

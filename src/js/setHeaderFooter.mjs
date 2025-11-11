@@ -1,6 +1,6 @@
 import { parkFooterTemplate } from "./template.mjs"
 
-function setHeaderInfo(data, number) {
+async function setHeaderInfo(data, number) {
     
     const disclaimer = document.querySelector(".disclaimer > a");
     disclaimer.href = data.url;
@@ -20,13 +20,13 @@ function setHeaderInfo(data, number) {
     states.textContent = data.states;  
 }
 
-function setParkFooter(data) {
+async function setParkFooter(data) {
     const parkFooterSection = document.querySelector("footer");
     const html = parkFooterTemplate(data);
     parkFooterSection.innerHTML = html;
 }
 
-export default function setHeaderFooter(park, number) {
+export default async function setHeaderFooter(park, number) {
     setHeaderInfo(park, number);
     setParkFooter(park);
 }

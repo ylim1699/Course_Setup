@@ -1,6 +1,8 @@
 import { getParkData, getParkAlertData, getParkVisotorCenterData, getParkActivitiesData } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";   
 import { alertsTemplate, visitorCenterTemplate, activitiesTemplate } from "./template.mjs";
+import "../css/style.css";
+import "../css/conditions.css";
 
 async function init() {
     const park = await getParkData();

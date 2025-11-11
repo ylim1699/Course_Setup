@@ -1,12 +1,16 @@
-import { getParkData, getParkAlertData } from "./parkService.mjs";
+import { getParkData, getParkAlertData, getParkVisotorCenterData, getParkActivitiesData } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";   
-import { alertsTemplate } from "./template.mjs";
+import { alertsTemplate, visitorCenterTemplate, activitiesTemplate } from "./template.mjs";
 
 async function init() {
     const park = await getParkData();
     const alerts = await getParkAlertData();
+    const visitorCenters = await getParkVisotorCenterData();
+    const activities = await getParkActivitiesData();
     setHeaderFooter(park, 2);
     setAlertInfo(alerts);
+    setVisitorCenterInfo(visitorCenters);
+    setParkActivitiesInfo(activities);
 }
 
 async function setAlertInfo(info) {
@@ -15,7 +19,17 @@ async function setAlertInfo(info) {
     alertSection.innerHTML = html;
 }
 
+async function setVisitorCenterInfo(info) {
+    const visitorCenterSection = document.querySelector(".visitor-services");
+    const html = visitorCenterTemplate(info);
+    visitorCenterSection.innerHTML = html;
+}
+
+async function setParkActivitiesInfo(info) {
+    const alertSection = document.querySelector(".activities");
+    const html = activitiesTemplate(info);
+    alertSection.innerHTML = html;
+}
+
+
 init();
-
-
-

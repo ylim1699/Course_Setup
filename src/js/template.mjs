@@ -32,11 +32,53 @@ export function parkFooterTemplate(info) {
 
 export function alertsTemplate(info) {
     return `<h3>Alerts</h3>
-    <details name="requirements">
-        <summary>Alerts</summary>
         <section class="alert1">
-            <h4>${info[2].title}</h4>
-            <p>${info[2].description}</p>
+            <svg class="icon" focusable="false" aria-hidden="true">
+                <use xlink:href="/images/sprite.symbol.svg#alert-closure"></use>
+            </svg>
+            <div class="alert-text"> 
+                <h4>${info[0].title}</h4>
+                <p>${info[0].description}</p>
+            </div>    
         </section>
-    </details>`;
+        <section class="alert2">
+            <svg class="icon" focusable="false" aria-hidden="true">
+                <use xlink:href="/images/sprite.symbol.svg#alert-information"></use>
+            </svg>
+            <div class="alert-text"> 
+                <h4>${info[1].title}</h4>
+                <p>${info[1].description}</p>
+            </div> 
+        </section>`;
+}
+
+
+export function visitorCenterTemplate(info) {
+    const centersList = info.map((center, index) => 
+        `<section class="visitor-center${index + 1}">
+            <h4>${center.name}</h4>
+            <p>${center.description}</p>
+            <p>${center.directionsInfo}</p>
+        </section>`).join('');
+
+    return ` <h3>Visitor Services</h3>
+    <div class="visitor-centers">
+    <details name="requirements">
+        <summary>Visitor Centers</summary>
+        ${centersList}
+    </details>
+    </visitor-centers>`;
+}
+
+export function activitiesTemplate(info) {
+    const activitiesList = info.map((activity) =>
+    `<li>${activity.name}</li>`).join('');
+
+    return `<h3>Activities</h3> 
+        <div class="activities-list">
+        <details name="requirements">
+            <summary>All Activities</summary>
+            <ul>${activitiesList}</ul>
+        </details>
+        </div>`;
 }

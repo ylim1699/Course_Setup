@@ -5,7 +5,7 @@ import { mediaCardTemplate } from "./template.mjs";
 
 async function init() {
     const park = await getParkData();
-    const links = await getInfoLinks()
+    const links = await getInfoLinks();
     setHeaderFooter(park, 0);
     setParkInfo(links);
     setParkIntro(park);
@@ -21,7 +21,7 @@ function setParkIntro(data) {
 }
 
 function setParkInfo(data) {
-    const parkInfoSection = document.querySelector(".info")
+    const parkInfoSection = document.querySelector(".info");
     const html = data.map(mediaCardTemplate);
     parkInfoSection.innerHTML = html.join("");
 }

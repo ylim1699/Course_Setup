@@ -1,5 +1,5 @@
-header {
-  position:  relative;
+.gh-gn {
+  position: relative;
 }
 
 .global-header {
@@ -12,6 +12,7 @@ header {
   padding-right: 1%;
   margin-top: 2%;
   border-bottom: 1px solid rgb(80, 79, 79);
+  position: relative;
 }
 
 .global-header_left a {
@@ -55,6 +56,8 @@ header {
   padding-bottom: 0;
 
   position: absolute;
+  top: 100%;
+  left: auto;
   width: 100%;
 
   max-height: 0;

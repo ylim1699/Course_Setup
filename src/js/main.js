@@ -9,6 +9,7 @@ async function init() {
     setHeaderFooter(park, 0);
     setParkInfo(links);
     setParkIntro(park);
+    enableNavigation();
 }
 
 init();
@@ -25,6 +26,38 @@ function setParkInfo(data) {
     parkInfoSection.innerHTML = html.join("");
 }
 
+function enableNavigation() {
+    const menuButton = document.querySelector("#global-header-button");
 
+    menuButton.addEventListener("click", (ev) => {
+        let target = ev.target;
+        let closedButton = document.querySelector('#global-header-button-closed');
+        let openButton = document.querySelector('#global-header-button-open');
+    
+
+        if (target.tagName != "BUTTON") {
+            target = target.closest("button");
+        }
+        
+        if (document.querySelector("#global-header-button").classList.contains("global-header-toggle")) {  
+            target.setAttribute("aria-expanded", true);
+        } 
+        else {  
+            target.setAttribute("aria-expanded", false);
+        }
+
+        if (openButton.classList.contains("hidden")) {
+            openButton.classList.remove('hidden');
+            closedButton.classList.add('hidden');
+        }
+
+        else if (closedButton.classList.contains("hidden")) {
+            openButton.classList.add('hidden');
+            closedButton.classList.remove('hidden');    
+        }
+        
+        document.querySelector("#global-nav").classList.toggle("global-nav-toggle");
+    });
+}
 
 

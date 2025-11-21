@@ -7,6 +7,7 @@
   padding-left: 1%;
   padding-right: 1%;
   margin-top: 2%;
+  border-bottom: 1px solid rgb(80, 79, 79);
 }
 
 .global-header_left a {
@@ -15,10 +16,6 @@
 
 .global-header_left a span {
   color: var(--bs-body-bg);
-}
-
-.global-header_right a {
-  text-decoration: none;
 }
 
 .global-header_right button {
@@ -33,13 +30,64 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 16px;
 }
 
-#global-nav-toggle {
+#global-header-button-closed,  #global-header-button-open{
+  display: flex;
+  align-items: center;
+}
+
+#global-header-button-closed.hidden, #global-header-button-open.hidden {
+  display: none;
+  align-items: center;
+}
+
+/* */
+#global-nav {
+  background-color: black;
+  color: white;
+  padding-bottom: 0;
+}
+
+#global-nav svg {
+  --icon-color: white;
+}
+
+.global-nav-toggle {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.global-nav-heading {
+  padding: 1.5%;
+}
+
+.global-nav-heading, #global-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.global-nav-split-button {
+  padding: 2%;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+#global-nav a {
+  margin-left: 0;
+}
+
+#global-nav li {
+  margin-left: 4%;
+}
+
+.global-nav-button-open {
+  background-color: rgb(0, 0, 0);
+  margin-left: 2%;
+  color: white;
 }
 
 .divider {
@@ -48,7 +96,7 @@
   height: 54px;     
   background: rgb(80, 79, 79);  
 }
-
+/*  */
 
 .hero {
   display: grid;

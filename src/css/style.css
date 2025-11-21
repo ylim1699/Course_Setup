@@ -24,10 +24,6 @@ main {
   margin-top: 2%;
 }
 
-.info {
-  height: 150px;
-}
-
 @media screen and (max-width: 600px) {
 
 .container {

@@ -36,6 +36,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-right: 1.25%;
   gap: 16px;
 }
 
@@ -74,13 +75,46 @@
   max-height: 600px; 
 }
 
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2% 10%;
+}
+
+.nav-wrapper ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-wrapper svg {
+  display: none;
+}
+
 #global-nav-heading1 {
+  display: none;
+}
+
+#global-nav-heading2 {
   display: none;
 }
 
 #global-nav a {
   color: white;
   text-decoration: none;
+}
+
+#global-nav-submenu1 li, 
+#global-nav-submenu2 li, 
+#global-nav-submenu3 li {
+  font-size: 0.875rem;
+  padding-top: 20%;
+}
+
+#global-nav-submenu1 li:hover, 
+#global-nav-submenu2 li:hover, 
+#global-nav-submenu3 li:hover {
+  text-decoration: underline;
 }
 
 .global-nav-split-button,

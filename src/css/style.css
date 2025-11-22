@@ -39,6 +39,11 @@ height: auto;
 .nav-wrapper {
 display: flex;
 flex-direction: column;
+margin: 0;
+}
+
+.nav-wrapper svg {
+  display: block;
 }
 
 #global-nav-heading1 {
@@ -110,33 +115,40 @@ border-left: 1px solid rgb(80, 79, 79);
 padding-left: 3%;
 }
 
-#global-nav-submenu {
-display: block;
-list-style: none;
-padding-left: 1%;
-margin: 0;
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.3s ease-out;
+#global-nav-submenu1 {
+    display: block;
+    list-style: none;
+    padding-left: 1%;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
-#global-nav .global-nav-submenu li a:hover {
-text-decoration: underline;
+#global-nav-submenu1 li {
+    padding: 0;
+}
+
+#global-nav #global-nav-submenu1 li a:hover {
 color: rgb(159, 159, 255);
 }
 
-#global-nav-submenu.global-nav-submenu-toggle {
+#global-nav-submenu1.global-nav-submenu-toggle {
 max-height: 5000px;
 transition: max-height 1s ease-in;
 }
 
-#global-nav-submenu {
+#global-nav-submenu1 {
 padding-top: 1%;
 }
 
-#global-nav-submenu li {
+#global-nav-submenu1 li {
 font-size: .75rem;
 padding-bottom: 1%;
+}
+
+#global-nav-submenu2, #global-nav-submenu3 {
+    display: none;
 }
 
 .global-nav-button-toggle svg{

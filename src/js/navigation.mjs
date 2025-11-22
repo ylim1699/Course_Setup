@@ -56,9 +56,9 @@ export async function enableSubNavigation() {
     subMenuButton.addEventListener("click", (ev) => {
         let target = ev.target;
         let globalNavHeader = document.querySelector("#global-nav-heading2");
-        let globalNavSubMenu = document.querySelector("#global-nav-submenu");
+        let globalNavSubMenu = document.querySelector("#global-nav-submenu1");
         let globalNavLearn = document.querySelector("#global-nav-list2");
-        let globalNavInvolve = document.querySelector("#global-nav-list3");
+        let globalNavInvolved = document.querySelector("#global-nav-list3");
 
 
         if (target.tagName != "BUTTON") {
@@ -66,12 +66,24 @@ export async function enableSubNavigation() {
         }
         
         target.classList.toggle("global-nav-button-toggle")
-        globalNavSubMenu.classList.toggle("global-nav-submenu-toggle");
         globalNavHeader.classList.toggle("global-nav-heading-toggle");
+        globalNavSubMenu.classList.toggle("global-nav-submenu-toggle");
         globalNavLearn.classList.toggle("global-nav-list-toggle");
-        globalNavInvolve.classList.toggle("global-nav-list-toggle");
+        globalNavInvolved.classList.toggle("global-nav-list-toggle");
 
         // --------------------// 
+        if (globalNavHeader.classList.contains("global-nav-heading-toggle")) {
+            globalNavHeader.setAttribute("aria-expanded", true);
+        } else {
+            globalNavHeader.setAttribute("aria-expanded", false);
+        }
+
+        if (globalNavSubMenu.classList.contains("global-nav-submenu-toggle")) {
+            globalNavSubMenu.setAttribute("aria-expanded", true);
+        } else {
+            globalNavSubMenu.setAttribute("aria-expanded", false);
+        }
+
         if (target.classList.contains("global-nav-button-toggle")) {  
                 target.setAttribute("aria-expanded", true);
             } 

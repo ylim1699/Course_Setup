@@ -6,116 +6,229 @@
 
 
 html, body {
-  height: 100%;
-  margin: 0;
+height: 100%;
+margin: 0;
 }
 
 .container {
-  display: flex;
-  flex-direction: column; 
-  min-height: 100vh;    
+display: flex;
+flex-direction: column; 
+min-height: 100vh;    
 }
 
 main {
-  flex: 1;      
+flex: 1;      
 }
 
 .disclaimer {
-  margin-top: 2%;
+margin-top: 2%;
 }
 
 @media screen and (max-width: 600px) {
 
 .container {
-  max-width: 600px;         
-  margin: 0 auto;    
-  padding: 0; 
-  width: 100%;
-  height: auto;
+max-width: 600px;         
+margin: 0 auto;    
+padding: 0; 
+width: 100%;
+height: auto;
+}
+
+/* header */
+
+.nav-wrapper {
+display: flex;
+flex-direction: column;
+}
+
+#global-nav-heading1 {
+font-size: 1.2rem;
+display: flex;
+padding-top: 1.5%;
+padding-left: 1.5%;
+padding-bottom: 2%;
+}
+
+.global-nav-heading-toggle {
+max-height: 0 !important;
+padding-top: 0 !important;
+padding-left: 0 !important;
+padding-bottom: 0 !important;
+transition: max-height 1s ease-in;
+color: black !important;
+}
+
+#global-nav-heading2 {
+font-size: 1.2rem;
+display: flex;
+padding-top: 1.5%;
+padding-left: 1.5%;
+padding-bottom: 2%;
+color: rgb(104, 126, 146);
+}
+
+#global-nav-list1 {
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+list-style: none;
+align-items: center;
+
+padding-left: 1%;
+padding-right: 3%;
+padding-top: 1%;
+padding-bottom: 1%;
+
+border: 1px solid rgb(80, 79, 79);
+background-color: rgb(53, 53, 53);
+}
+
+#global-nav-list2, #global-nav-list3 {
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+list-style: none;
+align-items: center;
+background-color: rgb(53, 53, 53);
+max-height: 0;
+overflow: hidden;
+transition: max-height .1s ease-out;
+}
+
+.global-nav-list-toggle {
+max-height: 1000px !important;
+padding-left: 1% !important;
+padding-right: 3% !important;
+padding-top: 1% !important;
+padding-bottom: 1% !important;
+border: 1px solid rgb(80, 79, 79) !important;
+transition: max-height .1s ease-in;
+}
+
+.global-nav-split-button, .global-nav-split-button-learn, .global-nav-split-button-involved {
+border-left: 1px solid rgb(80, 79, 79);
+padding-left: 3%;
+}
+
+#global-nav-submenu {
+display: block;
+list-style: none;
+padding-left: 1%;
+margin: 0;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out;
+}
+
+#global-nav .global-nav-submenu li a:hover {
+text-decoration: underline;
+color: rgb(159, 159, 255);
+}
+
+#global-nav-submenu.global-nav-submenu-toggle {
+max-height: 5000px;
+transition: max-height 1s ease-in;
+}
+
+#global-nav-submenu {
+padding-top: 1%;
+}
+
+#global-nav-submenu li {
+font-size: .75rem;
+padding-bottom: 1%;
+}
+
+.global-nav-button-toggle svg{
+transform: rotate(180deg);
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  position: relative;
+display: grid;
+grid-template-columns: 1fr;
+position: relative;
 }
 
 #park-image {
-  grid-column: 1/2;
-  grid-row: 1/3;
+grid-column: 1/2;
+grid-row: 1/3;
 }
 
 #park-image img {
-  position: absolute;
-  z-index: -1;
+position: absolute;
+z-index: -1;
 }
 
 #park-header {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  margin-top: 0;
-  padding: 4%;
+grid-column: 1 / 2;
+grid-row: 2 / 3;
+margin-top: 0;
+padding: 4%;
 }
 
 .park-header_subtitle p {
-  font-size: 0.8rem;
+font-size: 0.8rem;
 }
 
 #park-urls {
-  grid-row: 3 / 4;
+grid-row: 3 / 4;
 }
 
+/* main */
+
 .intro {
-  margin: 5% 0 5% 2%;
+margin: 5% 0 5% 2%;
 }
 
 .park-intro h1 {
-  margin-bottom: 3%;
+margin-bottom: 3%;
 }
 
 .intro {
-  margin: 10% 8% 10% 8%;
+margin: 10% 8% 10% 8%;
 }
 
 .intro h1 {
-  font-size: 1.5rem;
-  margin-bottom: 10%;
+font-size: 1.5rem;
+margin-bottom: 10%;
 }
 
 .intro p {
-  font-size: 0.9rem;
+font-size: 0.9rem;
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 150px;
-  margin-left: 2%;
-  margin-right: 2%;
-  height: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 150px;
+margin-left: 2%;
+margin-right: 2%;
+height: auto;
 }
 
 .info .media-card img{
-  width: 100%;
-  height:auto;
+width: 100%;
+height:auto;
 }
 
+/* footer */
+
 .park-footer {
-  padding: 7%;
+padding: 7%;
 }
 
 .park-footer h3 {
-  font-size: 1rem;
-  margin-bottom: 3%;
+font-size: 1rem;
+margin-bottom: 3%;
 }
 
 .park-footer p {
-  font-size: 0.75rem;
+font-size: 0.75rem;
 }
 
 .park-footer .phone {
-  margin-top: 3%;
+margin-top: 3%;
 }
 
 }

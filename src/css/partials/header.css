@@ -53,7 +53,6 @@
 #global-nav {
   background-color: black;
   color: white;
-  padding-bottom: 0;
 
   position: absolute;
   top: 100%;
@@ -63,6 +62,8 @@
   max-height: 0;
   transition: max-height 0.2s ease;
   overflow: hidden;
+
+  z-index: 10;
 }
 
 #global-nav svg {
@@ -73,18 +74,18 @@
   max-height: 600px; 
 }
 
-.global-nav-heading {
-  padding-top: 1.5%;
-  padding-left: 1.5%;
+#global-nav-heading1 {
+  display: none;
 }
 
-.global-nav-heading, #global-nav a {
+#global-nav a {
   color: white;
   text-decoration: none;
 }
 
-.global-nav-split-button {
-  padding: 2%;
+.global-nav-split-button,
+.global-nav-split-button-learn,
+.global-nav-split-button-involved {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,14 +95,25 @@
   margin-left: 0;
 }
 
-#global-nav li {
-  margin-left: 4%;
-}
-
-.global-nav-button-open {
+#global-nav-button-open,
+#global-nav-learn-button-open,
+#global-nav-involved-button-open {
   background-color: rgb(0, 0, 0);
   margin-left: 2%;
   color: white;
+}
+
+#global-nav-button-open:hover {
+  box-shadow: inset 0 -3px 0 0 white;
+}
+
+.global-nav-list1, 
+.global-nav-list2, 
+.global-nav-list3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1%;
 }
 
 .divider {

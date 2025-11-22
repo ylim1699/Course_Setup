@@ -30,3 +30,4 @@ export default async function setHeaderFooter(park, number) {
     setHeaderInfo(park, number);
     setParkFooter(park);
 }
+

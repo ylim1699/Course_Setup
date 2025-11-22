@@ -1,7 +1,7 @@
 import { getParkData, getParkAlertData, getParkVisotorCenterData, getParkActivitiesData } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";   
 import { alertsTemplate, visitorCenterTemplate, activitiesTemplate } from "./template.mjs";
-import "../css/style.css";
+import { enableNavigation } from "./navigation.mjs";
 import "../css/conditions.css";
 
 async function init() {
@@ -13,6 +13,7 @@ async function init() {
     setAlertInfo(alerts);
     setVisitorCenterInfo(visitorCenters);
     setParkActivitiesInfo(activities);
+    enableNavigation();
 }
 
 async function setAlertInfo(info) {

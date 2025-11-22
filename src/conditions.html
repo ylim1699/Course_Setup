@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Conditions page</title>
     <script type="module" src="./js/conditions.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <div class="container">
@@ -40,30 +41,69 @@
           </li>
         </ul>
       </div>
+
     <header>
+        <div class="gh-gn">
         <section class="global-header">
           <div class="global-header_left">
             <a href="index.html" class="site-title"
             ><span class="logo" role="presentation"></span>
             <span>National Park Service</span></a>
           </div>
-            <div class="global-header_right">
-              <a class="search-icon" href="#park-footer">
-                <svg class="icon">
-                  <use xlink:href="/images/sprite.symbol.svg#search"></use>
-                </svg>
-                <span class="visually-hidden">Search</span>
-              </a>
-              <span class="divider"></span>
-              <button id="global-nav-toggle">
+
+          <div class="global-header_right">
+            <a class="search-icon" href="#park-footer">
+              <svg class="icon">
+                <use xlink:href="/images/sprite.symbol.svg#search"></use>
+              </svg>
+              <span class="visually-hidden">Search</span>
+            </a>
+
+            <span class="divider"></span>
+
+            <button 
+              id="global-header-button" 
+              class="global-header-toggle"  
+              aria-expanded="false" 
+              aria-label="Open Menu"
+              >
+              <div id="global-header-button-closed">
                 <svg class="icon">
                   <use xlink:href="/images/sprite.symbol.svg#menu"></use>
                 </svg>
                 <span class="visually-hidden">Open</span>
                 MENU
-              </button>
-            </div>
-          </section>
+              </div>
+              <div  id="global-header-button-open" class="hidden">
+                <span class="visually-hidden">Toggle submenu for Plan Your Visit</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/images/sprite.symbol.svg#close"></use>
+                </svg>
+                CLOSE
+              </div>
+            </button>
+          </div>       
+        </section>
+
+        <nav 
+          id="global-nav" 
+          >
+          <h2 class="global-nav-heading">Explore this Park</h2>
+          <ul class="global-nav-list">
+            <li>
+              <div class="global-nav-split-button">
+                <a href="#">Plan Your Visit</a>
+                <button class="global-nav-button-open">
+                  <span class="visually-hidden">Toggle submenu for Plan Your Visit</span>
+                  <svg class="icon" role="presentation" focusable="false">
+                    <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        </div>
           
           <div class="hero">
           <div id="park-image">

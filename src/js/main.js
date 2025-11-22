@@ -2,6 +2,7 @@ import { getParkData, getInfoLinks } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";   
 import { parkIntroTemplate } from "./template.mjs";
 import { mediaCardTemplate } from "./template.mjs"; 
+import { enableNavigation, enableSubNavigation } from "./navigation.mjs";
 
 async function init() {
     const park = await getParkData();
@@ -10,6 +11,7 @@ async function init() {
     setParkInfo(links);
     setParkIntro(park);
     enableNavigation();
+    enableSubNavigation();
 }
 
 init();
@@ -26,47 +28,5 @@ function setParkInfo(data) {
     parkInfoSection.innerHTML = html.join("");
 }
 
-function enableNavigation() {
-    const menuButton = document.querySelector("#global-header-button");
-
-    menuButton.addEventListener("click", (ev) => {
-        let target = ev.target;
-        
-        if (target.tagName != "BUTTON") {
-            target = target.closest("button");
-        }
-        
-        if (document.querySelector("#global-header-button").classList.contains("global-header-toggle")) {  
-            target.setAttribute("aria-expanded", true);
-        } 
-        else {  
-            target.setAttribute("aria-expanded", false);
-        }
-        
-        //--------------------// 
-
-        let globalNavSplitBtn = document.querySelector("#global-nav");
-        let closedButton = document.querySelector('#global-header-button-closed');
-        let openButton = document.querySelector('#global-header-button-open');
-
-
-        if (openButton.classList.contains("hidden")) {
-            openButton.classList.remove('hidden');
-            closedButton.classList.add('hidden');
-        }
-
-        else if (closedButton.classList.contains("hidden")) {
-            openButton.classList.add('hidden');
-            closedButton.classList.remove('hidden');    
-        }
-        
-        if (globalNavSplitBtn.classList.contains("global-nav-toggle")) {
-            globalNavSplitBtn.classList.remove("global-nav-toggle");
-        }
-        else {
-            globalNavSplitBtn.classList.add("global-nav-toggle");
-        }
-    });
-}
 
 

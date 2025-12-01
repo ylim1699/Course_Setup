@@ -35,6 +35,15 @@
   margin-top: 1.5%;
 }
 
+.visitor-centers h4 a {
+  text-decoration: none;
+  color: black;
+}
+
+.visitor-centers h4 a:hover {
+  text-decoration: underline;
+}
+
 .visitor-center1, 
 .visitor-center2,
 .visitor-center3,
@@ -49,6 +58,7 @@
   border-bottom: 1px solid rgb(196, 196, 196);
   padding-bottom: 1.5%;
   margin-bottom: 1.5%;
+  list-style: none;
 }
 
 .activities, .activities h3 {

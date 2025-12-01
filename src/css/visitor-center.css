@@ -1,0 +1,107 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    width: 98%;
+}
+
+.vc-name {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    
+    border-bottom: 1px solid rgba(189, 188, 188, 0.7);
+    font-size: 25px;
+}
+
+.vc-name svg {
+    fill: black;
+    background-color: white;
+}
+
+main .vc-name .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.vc-info {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid rgba(189, 188, 188, 0.7)
+}
+
+.vc-details-list {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+#vcDirections, 
+#vcAmenities, 
+#vcContact {
+    padding-top: 1.5%;
+}
+
+#vcAddresses, 
+#vcDirections, 
+#vcAmenities, 
+#vcContact {
+    padding-bottom: 1.5%;
+    border-bottom: 1px solid rgba(189, 188, 188, 0.7)
+}
+
+#vcAddresses svg, 
+#vcDirections svg, 
+#vcAmenities svg, 
+#vcContact svg {
+    background-color: white;   
+    fill: black;
+    stroke: black;
+}
+
+.vc-addresses__physical, .vc-addresses__mailing {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+.vc-addresses__physical h3, .vc-addresses__mailing h3 {
+    padding-bottom: 1.5%;
+}
+
+#vcDirections p {
+    padding-top: 1.5%;
+}
+
+#vcAmenities ul {
+    list-style: none;
+    padding-top: 1.5%;
+}
+
+#vcAmenities ul li {
+    margin-bottom: 8px;
+}
+
+.vc-contact__email, .vc-contact__phone {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vc-gallery svg {
+    background-color: white;
+}

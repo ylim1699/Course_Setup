@@ -57,11 +57,11 @@ export function alertsTemplate(info) {
 
 export function visitorCenterTemplate(info) {
     const centersList = info.map((center, index) => 
-        `<section class="visitor-center${index + 1}">
-            <h4>${center.name}</h4>
+        `<li class="visitor-center${index + 1}">
+            <h4><a href="visitor-center.html">${center.name}</a></h4>
             <p>${center.description}</p>
             <p>${center.directionsInfo}</p>
-        </section>`).join('');
+        </li>`).join('');
 
     return ` <h3>Visitor Services</h3>
     <div class="visitor-centers">

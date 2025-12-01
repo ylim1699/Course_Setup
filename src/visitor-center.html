@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main page</title>
+    <link rel="stylesheet" href="./css/visitor-center.css">
+    <script type="module" src="js/visitor-center.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <p class="disclaimer">
+        This is not a real NPS website. It is an educational exercise. If you
+        landed here by accident, to find the real website visit
+        <a></a>
+      </p>
+      <div class="skip-links" aria-label="short-cut links" role="navigation">
+        <ul>
+          <li>
+            <a
+              href="#global-nav-toggle"
+              aria-label="Skip to global NPS navigation"
+              >Skip to global NPS navigation</a
+            >
+          </li>
+          <li>
+            <a href="#local-nav" aria-label="Skip to this park navigation"
+              >Skip to this park navigation</a
+            >
+          </li>
+          <li>
+            <a href="#main" aria-label="Skip to the main content"
+              >Skip to the main content</a
+            >
+          </li>
+          <li>
+            <a
+              href="#park-footer"
+              aria-label="Skip to this park information section"
+              >Skip to this park information section</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <header>
+        <div class="gh-gn">
+          <section class="global-header">
+            <div class="global-header_left">
+              <a href="index.html" class="site-title"
+                ><span class="logo" role="presentation"></span>
+                <span>National Park Service</span></a
+              >
+            </div>
+
+            <div class="global-header_right">
+              <a class="search-icon" href="#park-footer">
+                <svg class="icon">
+                  <use xlink:href="/images/sprite.symbol.svg#search"></use>
+                </svg>
+                <span class="visually-hidden">Search</span>
+              </a>
+
+              <span class="divider"></span>
+
+              <button id="global-header-button" aria-label="Open Menu">
+                <div id="global-header-button-closed">
+                  <svg class="icon">
+                    <use xlink:href="/images/sprite.symbol.svg#menu"></use>
+                  </svg>
+                  <span class="visually-hidden">Open</span>
+                  MENU
+                </div>
+                <div id="global-header-button-open" class="hidden">
+                  <span class="visually-hidden"
+                    >Toggle submenu for Plan Your Visit</span
+                  >
+                  <svg class="icon" role="presentation" focusable="false">
+                    <use xlink:href="/images/sprite.symbol.svg#close"></use>
+                  </svg>
+                  CLOSE
+                </div>
+              </button>
+            </div>
+          </section>
+
+          <nav id="global-nav">
+            <div class="nav-wrapper">
+              <h2 id="global-nav-heading1">Explore this Park</h2>
+
+              <div class="global-nav-list1-submenu">
+                <div id="global-nav-list1">
+                  <ul>
+                    <li>
+                      <a href="#">Plan Your Visit</a>
+                    </li>
+                  </ul>
+                  <div class="global-nav-split-button">
+                    <button id="global-nav-button-open">
+                      <span class="visually-hidden"
+                        >Toggle submenu for Plan Your Visit</span
+                      >
+                      <svg class="icon" role="presentation" focusable="false">
+                        <use
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          xlink:href="/images/sprite.symbol.svg#arrow"
+                        ></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <h2 id="global-nav-heading2">
+                  Explore the National Park Service
+                </h2>
+
+                <div
+                  id="global-nav-submenu1"
+                  aria-label="Plan Your Visit submenu"
+                >
+                  <ul>
+                    <li><a href="#">Find a Park</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Passes</a></li>
+                    <li><a href="#">Trip Ideas</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="global-nav-list2-submenu">
+                <div id="global-nav-list2">
+                  <ul>
+                    <li>
+                      <a href="#">Learn & Explore</a>
+                    </li>
+                  </ul>
+                  <div class="global-nav-split-button-learn">
+                    <button id="global-nav-learn-button-open">
+                      <span class="visually-hidden"
+                        >Toggle submenu for Plan Your Visit</span
+                      >
+                      <svg class="icon" role="presentation" focusable="false">
+                        <use
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          xlink:href="/images/sprite.symbol.svg#arrow"
+                        ></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  id="global-nav-submenu2"
+                  aria-label="Learn and Explore submenu"
+                >
+                  <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Discover History</a></li>
+                    <li><a href="#">Explore Nature</a></li>
+                    <li><a href="#">Kids</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="global-nav-list3-submenu">
+                <div id="global-nav-list3">
+                  <ul>
+                    <li>
+                      <a href="#">Get Involved</a>
+                    </li>
+                  </ul>
+                  <div class="global-nav-split-button-involved">
+                    <button id="global-nav-involved-button-open">
+                      <span class="visually-hidden"
+                        >Toggle submenu for Plan Your Visit</span
+                      >
+                      <svg class="icon" role="presentation" focusable="false">
+                        <use
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          xlink:href="/images/sprite.symbol.svg#arrow"
+                        ></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div id="global-nav-submenu3" aria-label="Get Involved submenu">
+                  <ul>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Partner</a></li>
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">Work for Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="hero">
+          <div id="park-image">
+            <img src="" alt="" />
+          </div>
+          <section id="park-header">
+            <h2 class="park-header_title"></h2>
+            <div class="park-header_subtitle">
+              <p></p>
+              <p></p>
+            </div>
+          </section>
+
+          <section id="park-urls">
+            <a href="conditions.html">
+              <span>Info</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#info"></use>
+              </svg>
+            </a>
+            <a href="conditions.html">
+              <span>Alert</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#alert"></use>
+              </svg>
+            </a>
+            <a href="#">
+              <span>Maps</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use
+                  xlink:href="/images/sprite.symbol.svg#location-marker"
+                ></use>
+              </svg>
+            </a>
+            <a href="#">
+              <span>Calendar</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#calendar"></use>
+              </svg>
+            </a>
+            <a href="#">
+              <span>Fees</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#fee-22"></use>
+              </svg>
+            </a>
+          </section>
+        </div>
+      </header>
+<!-- ddddddddddddddddddddddddddddddddddddddddddddddd -->
+      <main>
+        <h1 class="vc-name">
+          <svg class="icon" role="presentation" focusable="false">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/images/sprite.symbol.svg#ranger-station"
+            ></use>
+          </svg>
+          [Visitor center name]
+        </h1>
+        <section class="vc-info">
+          <figure>
+            <img src="https://via.placeholder.com/150" alt="center image" />
+            <figcaption>
+              [visitor center image] <span>[attribution]</span>
+            </figcaption>
+          </figure>
+          <p>[info here]</p>
+        </section>
+        <section class="vc-details-list">
+          <details name="vc-details" id="vcAddresses">
+            <summary>
+              <svg class="icon" role="presentation" focusable="false">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/images/sprite.symbol.svg#location"
+                ></use>
+              </svg>
+              Addresses
+            </summary>
+            <!-- Remove later -->
+            <section class="vc-addresses__physical">
+              <h3>Physical Address</h3>
+              <address>
+                [Address part 1]<br />
+                [park name], [state] [zip]
+              </address>
+            </section>
+            <section class="vc-addresses__mailing">
+              <h3>Mailing Address</h3>
+              <address>
+                [Address part 1]<br />
+                [park name], [state] [zip]
+              </address>
+            </section>
+          </details>
+          <details name="vc-details" id="vcDirections">
+            <summary>
+              <svg class="icon" role="presentation" focusable="false">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/images/sprite.symbol.svg#directions"
+                ></use>
+              </svg>
+              Directions
+            </summary>
+            <p>[directions]</p>
+            <!-- remove later -->
+          </details>
+          <details name="vc-details" id="vcAmenities">
+            <summary>
+              <svg class="icon" role="presentation" focusable="false">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/images/sprite.symbol.svg#info"
+                ></use>
+              </svg>
+              Amenities
+            </summary>
+            <ul>
+              <!-- Remove later -->
+              <li>All</li>
+              <li>the</li>
+              <li>amenities</li>
+            </ul>
+          </details>
+          <details name="vc-details" id="vcContact">
+            <summary>
+              <svg class="icon" role="presentation" focusable="false">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/images/sprite.symbol.svg#phone"
+                ></use>
+              </svg>
+              Contact Information
+            </summary>
+            <!-- Remove later -->
+            <section class="vc-contact__email">
+              <h3>Email Address</h3>
+              <a href="email:">Send this visitor center an email</a>
+            </section>
+            <section class="vc-contact__phone">
+              <h3>Phone numbers</h3>
+              <a href="tel:+12083591111">[phone]</a>
+            </section>
+          </details>
+        </section>
+        <section class="vc-gallery">
+          <h2>
+            <svg class="icon" role="presentation" focusable="false">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#camera-alt"
+              ></use>
+            </svg>
+            Image Gallery
+          </h2>
+          <ul>
+            <!-- Remove later -->
+            <li><img src="" alt="" /></li>
+          </ul>
+        </section>
+      </main>
+<!-- ddddddddddddddddddddddddddddddddddddddddddddddd -->
+      <footer></footer>
+    </div>
+  </body>
+</html>

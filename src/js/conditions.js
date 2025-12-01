@@ -1,4 +1,4 @@
-import { getParkData, getParkAlertData, getParkVisotorCenterData, getParkActivitiesData } from "./parkService.mjs";
+import { getParkData, getParkAlertData, getParkVisitorCenterData, getParkActivitiesData } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";   
 import { alertsTemplate, visitorCenterTemplate, activitiesTemplate } from "./template.mjs";
 import { enableNavigation, enableSubNavigation } from "./navigation.mjs";
@@ -7,7 +7,7 @@ import "../css/conditions.css";
 async function init() {
     const park = await getParkData();
     const alerts = await getParkAlertData();
-    const visitorCenters = await getParkVisotorCenterData();
+    const visitorCenters = await getParkVisitorCenterData();
     const activities = await getParkActivitiesData();
     setHeaderFooter(park, 2);
     setAlertInfo(alerts);

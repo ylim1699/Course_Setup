@@ -1,5 +1,3 @@
-import spritePath from '../images/sprite.symbol.svg';
-
 export function parkIntroTemplate(info) {
     return `<div class="park-intro">
     <h1>${info.fullName}</h1>

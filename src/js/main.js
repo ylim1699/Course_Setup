@@ -5,6 +5,7 @@ import { mediaCardTemplate } from "./template.mjs";
 import { enableNavigation, enableSubNavigation } from "./navigation.mjs";
 
 async function init() {
+    console.log("init");
     const park = await getParkData();
     const links = await getInfoLinks();
     setHeaderFooter(park, 0);

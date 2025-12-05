@@ -1,7 +1,7 @@
+import '../css/style.css';
 import  setHeaderFooter  from "./setHeaderFooter.mjs";
 import { getParkData, getParkVisitorCenterDetails } from "./parkService.mjs";
 import { enableNavigation, enableSubNavigation } from "./navigation.mjs";
-import '../css/style.css';
 
 function getParam(param) {
     const search = location.search;

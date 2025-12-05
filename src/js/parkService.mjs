@@ -31,7 +31,7 @@ export async function getInfoLinks() {
 const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
 
-async function getJson(url) {
+export async function getJson(url) {
   const options = {
     method: "GET",
     headers: {
@@ -40,9 +40,11 @@ async function getJson(url) {
   };
   let data = {};
   const response = await fetch(baseUrl + url, options);
+  
   if (response.ok) {
     data = await response.json();
   } else throw new Error("response not ok");
+  console.log("error");
   return data;
 }
 

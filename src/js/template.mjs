@@ -82,3 +82,49 @@ export function activitiesTemplate(info) {
         </details>
         </div>`;
 }
+
+export function vcNameTemplate() {
+    return `
+        <h1 class="vc-name">
+          <svg class="icon" role="presentation" focusable="false">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/images/sprite.symbol.svg#ranger-station"
+            ></use>
+          </svg>
+          [Visitor center name]
+        </h1>
+    `;
+}
+
+export function vcInfoTemplate() {
+    return ` 
+        <section class="vc-info">
+          <figure>
+            <img src="https://via.placeholder.com/150" alt="center image" />
+            <figcaption>
+              [visitor center image] <span>[attribution]</span>
+            </figcaption>
+          </figure>
+          <p>[info here]</p>
+        </section>
+    `;
+}
+
+export function vcAddressesTemplate() {
+    return `
+    
+    `;
+}
+
+export function vcDirectionsTemplate() {
+    return`
+    
+    `;
+}
+
+export function vcAmenitiesTemplate() {
+    return`
+    
+    `;
+}

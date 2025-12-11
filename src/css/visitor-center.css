@@ -111,9 +111,16 @@ main .vc-name .icon {
   position: relative;
 }
 
+.vc-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .vc-gallery > h2 {
   text-transform: uppercase;
   font-size: 1.25rem;
+  margin-bottom: 2%;
 }
 
 .vc-gallery ul {
@@ -125,8 +132,8 @@ main .vc-name .icon {
 
 /* This is an example of how to clip an image into a square shape */
 .vc-gallery img {
-  width: 265px; /* set the width to the desired size */
-  height: 265px; /* set the height to the same value as the width */
+  width: 250px; /* set the width to the desired size */
+  height: 250px; /* set the height to the same value as the width */
   object-fit: cover;
   object-position: center;
 }

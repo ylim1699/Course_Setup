@@ -1,12 +1,12 @@
 export function parkIntroTemplate(info) {
-    return `<div class="park-intro">
+  return `<div class="park-intro">
     <h1>${info.fullName}</h1>
     <p>${info.description}</p>
     </div>`;
 }
 
 export function mediaCardTemplate(info) {
-    return `<div class="media-card">
+  return `<div class="media-card">
     <a href="${info.link}">
     <img src="${info.image}" alt="${info.name}" class="media-card_image">
     </a>
@@ -16,7 +16,7 @@ export function mediaCardTemplate(info) {
 }
 
 export function parkFooterTemplate(info) {
-    return `<div class="park-footer">
+  return `<div class="park-footer">
     <h3>Contact Info</h3>
     <div class="mailing">
     <p>Mailing Address:</p>
@@ -31,7 +31,7 @@ export function parkFooterTemplate(info) {
 }
 
 export function alertsTemplate(info) {
-    return `<h3>Alerts</h3>
+  return `<h3>Alerts</h3>
         <section class="alert1">
             <svg class="icon" focusable="false" aria-hidden="true">
                 <use xlink:href="/images/sprite.symbol.svg#alert-closure"></use>
@@ -52,79 +52,95 @@ export function alertsTemplate(info) {
         </section>`;
 }
 
-
 export function visitorCenterTemplate(info) {
-    const centersList = info.map((center, index) => 
+  const centersList = info
+    .map(
+      (center, index) =>
         `<li class="visitor-center${index + 1}">
-            <h4><a href="visitor-center.html">${center.name}</a></h4>
+            <h4><a href="visitor-center.html?id=${center.id}">${center.name}</a></h4>
             <p>${center.description}</p>
             <p>${center.directionsInfo}</p>
-        </li>`).join('');
+        </li>`
+    )
+    .join("");
 
-    return ` <h3>Visitor Services</h3>
+  return ` <h3>Visitor Services</h3>
     <div class="visitor-centers">
     <details name="requirements">
         <summary>Visitor Centers</summary>
         ${centersList}
     </details>
-    </visitor-centers>`;
+    </div>`;
 }
 
 export function activitiesTemplate(info) {
-    const activitiesList = info.map((activity) =>
-    `<li>${activity.name}</li>`).join('');
+  const activitiesList = info
+    .map((activity) => `<li>${activity.name}</li>`)
+    .join("");
 
-    return `<h3>Activities</h3> 
+  return `<h3>Activities</h3> 
         <div class="activities-list">
         <details name="requirements">
             <summary>All Activities</summary>
             <ul>${activitiesList}</ul>
         </details>
-        </div>`;
+        </div>
+        `;
 }
 
-export function vcNameTemplate() {
-    return `
-        <h1 class="vc-name">
-          <svg class="icon" role="presentation" focusable="false">
+export function vcTitleTemplate(data) {
+  let icon = "ranger-station";
+
+  return `
+    <h1 class="vc-name">
+        <svg class="icon" role="presentation" focusable="false">
             <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="/images/sprite.symbol.svg#ranger-station"
-            ></use>
-          </svg>
-          [Visitor center name]
-        </h1>
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#${icon}}">
+            </use>
+        </svg>
+        ${data.name}
+    </h1>
     `;
 }
 
 export function vcInfoTemplate() {
-    return ` 
+  return ` 
         <section class="vc-info">
-          <figure>
+            <figure>
             <img src="https://via.placeholder.com/150" alt="center image" />
             <figcaption>
-              [visitor center image] <span>[attribution]</span>
+                [visitor center image] <span>[attribution]</span>
             </figcaption>
-          </figure>
-          <p>[info here]</p>
+            </figure>
+            <p>[info here]</p>
         </section>
     `;
 }
-
 export function vcAddressesTemplate() {
-    return `
+  return `
     
     `;
 }
 
 export function vcDirectionsTemplate() {
-    return`
+  return `
     
     `;
 }
 
 export function vcAmenitiesTemplate() {
-    return`
+  return `
     
     `;
+}
+
+export function listTemplate(data, ContentTemplate) {
+  const html = data.map(ContentTemplate);
+  return `<ul>${html.join("")}</ul>`;
+}
+
+export function vcImageTemplate(data) {
+  let index = 0;
+  return `<li><img src="${data.url}" alt="${data.altText}" ></li>`;
 }

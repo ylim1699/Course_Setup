@@ -18,7 +18,7 @@ export async function getInfoLinks() {
           description: "Learn about the fees and passes that are available",
       },
       {
-          name: "Vistor Centers",
+          name: "Visitor Centers",
           link: "visitor_centers.html",
           image: park.images[9].url,
           description: "Learn about the visitor concerns in the park",
@@ -39,12 +39,12 @@ export async function getJson(url) {
     }
   };
   let data = {};
+  console.log("Fetching URL:", baseUrl + url);
   const response = await fetch(baseUrl + url, options);
   
   if (response.ok) {
     data = await response.json();
   } else throw new Error("response not ok");
-  console.log("error");
   return data;
 }
 
@@ -69,6 +69,6 @@ export async function getParkVisitorCenterDetails(id) {
 }
 
 export async function getParkActivitiesData() {
-  const parkData = await getJson("activities?id=yell");
+  const parkData = await getJson("activities?parkCode=yell");
   return parkData.data;
 }

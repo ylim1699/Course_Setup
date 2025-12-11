@@ -35,5 +35,4 @@ async function setParkActivitiesInfo(info) {
     alertSection.innerHTML = html;
 }
 
-
 init();

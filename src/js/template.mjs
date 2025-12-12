@@ -89,14 +89,12 @@ export function activitiesTemplate(info) {
 }
 
 export function vcTitleTemplate(data) {
-  let icon = "ranger-station";
-
   return `
     <h1 class="vc-name">
         <svg class="icon" role="presentation" focusable="false">
             <use
                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="/images/sprite.symbol.svg#${icon}}">
+                xlink:href="/images/sprite.symbol.svg#ranger-station">
             </use>
         </svg>
         ${data.name}
@@ -104,35 +102,70 @@ export function vcTitleTemplate(data) {
     `;
 }
 
-export function vcInfoTemplate() {
+export function vcInfoTemplate(data) {
+  const images = data.images[0];
   return ` 
-        <section class="vc-info">
-            <figure>
-            <img src="https://via.placeholder.com/150" alt="center image" />
-            <figcaption>
-                [visitor center image] <span>[attribution]</span>
-            </figcaption>
-            </figure>
-            <p>[info here]</p>
-        </section>
-    `;
-}
-export function vcAddressesTemplate() {
-  return `
-    
+        <figure>
+        <img src="${images.url}" alt="${images.altText}"></img> 
+        <figcaption>
+            <span>${images.caption}</span>
+        </figcaption>
+        </figure>
+        <p>${data.description}</p>
     `;
 }
 
-export function vcDirectionsTemplate() {
+export function vcAddressTemplate(data) {
+  const physical = data.addresses.find((address) => address.type === "Physical");
+  const mailing = data.addresses.find((address) => address.type === "Mailing");
+
   return `
-    
+  <section class="vc-addresses__physical">
+              <h3>Physical Address</h3>
+              <address>
+                ${physical.line1}<br />
+                ${physical.city}, ${physical.stateCode} ${physical.postalCode}
+              </address>
+            </section>
+            <section class="vc-addresses__mailing">
+              <h3>Mailing Address</h3>
+              <address>
+                ${mailing.line1}<br />
+                ${mailing.city}, ${mailing.stateCode} ${mailing.postalCode}
+              </address>
+            </section>
     `;
 }
 
-export function vcAmenitiesTemplate() {
+export function vcDirectionsTemplate(data) {
   return `
-    
+      <p>${data.directionsInfo}</p>
     `;
+}
+
+export function vcAmenitiesTemplate(data) {
+  const amenitiesList = data.amenities;
+  const list = amenitiesList.map((amenity) => vcAmenitiesListTemplate(amenity)).join('');
+  return `<ul>${list}</ul>`
+}
+
+function vcAmenitiesListTemplate(amenities) {
+  return `
+    <li>${amenities}</li>
+  `;
+}
+
+export function vcContactTemplate(data) {
+  return `
+    <section class="vc-contact__email">
+      <h3>Email Address</h3>
+      <a href="${data.contacts.emailAddresses[0].emailAddress}:">${data.contacts.emailAddresses[0].emailAddress}</a>
+    </section>
+    <section class="vc-contact__phone">
+      <h3>Phone numbers</h3>
+      <a href="tel:${data.contacts.phoneNumbers[0].phoneNumber}">${data.contacts.phoneNumbers[0].phoneNumber}</a>
+    </section>
+  `;
 }
 
 export function listTemplate(data, ContentTemplate) {
@@ -141,6 +174,5 @@ export function listTemplate(data, ContentTemplate) {
 }
 
 export function vcImageTemplate(data) {
-  let index = 0;
   return `<li><img src="${data.url}" alt="${data.altText}" ></li>`;
 }

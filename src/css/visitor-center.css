@@ -33,6 +33,16 @@ main .vc-name .icon {
     border-bottom: 1px solid rgba(189, 188, 188, 0.7)
 }
 
+.vc-info figure {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  align-self: center;
+  width: 90%;
+  margin-bottom: 2%;
+}
+
 .vc-details-list {
     padding-top: 1.5%;
     padding-bottom: 1.5%;
@@ -78,6 +88,7 @@ main .vc-name .icon {
 #vcAmenities ul {
     list-style: none;
     padding-top: 1.5%;
+    margin-left: 1%;
 }
 
 #vcAmenities ul li {
@@ -115,6 +126,7 @@ main .vc-name .icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 2%;
 }
 
 .vc-gallery > h2 {
